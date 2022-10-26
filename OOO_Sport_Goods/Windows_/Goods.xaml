@@ -1,0 +1,61 @@
+﻿<Window x:Class="OOO_Sport_Goods.Windows_.Goods"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOO_Sport_Goods.Windows_"
+        mc:Ignorable="d"
+        Title="Goods" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="663*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="385*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txt_fio" Text="Гость" Grid.Column="1" HorizontalAlignment="Right" Margin="10 5" FontWeight="Bold"/>
+        <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Поиск:"/>
+                <StackPanel Width="230">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="Товар" Width="110" Margin="5 0" x:Name="c1"/>
+                        <TextBox Width="110" x:Name="tb_good" TextChanged="tb_good_TextChanged"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="Описание" Width="110" Margin="5 0" x:Name="c2"/>
+                        <TextBox Width="110" x:Name="tb_discr" TextChanged="tb_discr_TextChanged"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="Производитель" Width="110" Margin="5 0" x:Name="c3"/>
+                        <TextBox Width="110" x:Name="tb_man" TextChanged="tb_man_TextChanged"/>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="Цена:" Margin="5 0"/>
+                <ComboBox Width="120" Height="20" SelectedIndex="0" VerticalAlignment="Top" Margin="0 1" x:Name="cmb_price" DropDownClosed="cmb_price_DropDownClosed">
+                    <ComboBoxItem>По возрастанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Text="Производитель:" Margin="5 0"/>
+                <ComboBox x:Name="cmb_manuf" Width="120" Height="20" VerticalAlignment="Top" Margin="0 1" DropDownClosed="cmb_manuf_DropDownClosed">
+                </ComboBox>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="2" Margin="2" Grid.Row="2" Grid.Column="1">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <StackPanel x:Name="st_main">
+                    
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        <TextBlock Text="hjf" x:Name="txt_col" HorizontalAlignment="Left" Margin="5 5"/>
+        <StackPanel Grid.Row="2" Margin="2 2" x:Name="st_left" Visibility="Collapsed">
+            <Button Content="Добавить" x:Name="btn_add" Click="btn_add_Click" Margin="0 3"/>
+            <Button Content="Редактировать" x:Name="btn_edit" Click="btn_edit_Click" Margin="0 3"/>
+            <Button Content="Удалить" x:Name="btn_del" Click="btn_del_Click" Margin="0 3"/>
+        </StackPanel>
+    </Grid>
+</Window>
